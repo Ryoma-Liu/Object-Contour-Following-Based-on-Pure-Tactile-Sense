@@ -1,0 +1,62 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   6 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "doneDoubleBufferReInit"\
+      Description  "DoubleBufferInitCheck"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c1_IKTrajectoryControlExample"\
+      Description  "StateIsActive"\
+      SFName       "is_active_c1_IKTrajectoryControlExample"\
+      Path         "is_active_c1_IKTrajectoryControlExample"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "index"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "index"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "tol"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "tol"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "error"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "error"\
+      SrcLocation  ""\
+      Dimensions   [1,4]\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
